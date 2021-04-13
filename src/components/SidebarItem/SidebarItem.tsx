@@ -1,24 +1,39 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import GIcon, { GIconType } from "../GIcon/GIcon";
 
 export type SidebarItemProps = {
     icon : GIconType;
-    text : string
-}
-function SidebarItem({ icon, text} : SidebarItemProps){
-    return <ListItem>
-        <GIcon name={icon} />
-        <span>{text}</span>
-    </ListItem>
+    text : string;
+    to : string;
 }
 
-const ListItem = styled.li`
+function SidebarItem({ icon, text, to} : SidebarItemProps){
+    return <ListItem>
+        <StyledLink to={to} exact>
+            <GIcon name={icon} />
+            <span>{text}</span>
+        </StyledLink>
+        
+    </ListItem>
+}
+const StyledLink = styled(NavLink)`
     display:flex;
     align-items:center;
     border-radius:0.5rem;
     height:3.75rem;
     padding-left:1rem;
     padding-right:1rem;
+    margin-top:.5rem;
+    margin-bottom:.5rem;
+    text-decoration:none;
+    color:black;
+    &.active {
+        background:lightgrey;
+        font-weight:bold;
+        
+    }
+
     &:hover{
         background: lightgrey;
     }
@@ -31,5 +46,8 @@ const ListItem = styled.li`
         font-size:1.125rem;
         margin-left:1rem;
     }
+`;
+const ListItem = styled.li`
+    
 `
 export default SidebarItem;

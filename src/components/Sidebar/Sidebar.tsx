@@ -8,9 +8,10 @@ function Sidebar({}:SidebarProps){
     return <SidebarWrapper>
         <div className="logo">G-logger</div>
         <Menu>
-            <SidebarItem icon='dashboard' text='Dashboard' />
-            <SidebarItem icon='flask' text='Lab' />
-            <SidebarItem icon='settings' text='Setting' />
+            <SidebarItem icon='dashboard' text='Dashboard' to='/'/>
+            <SidebarItem icon='logs' text='Logs' to='/Logs'/>
+            <SidebarItem icon='flask' text='Lab' to='/Lab'/>
+            <SidebarItem icon='settings' text='Settings' to='/Settings'/>
             
         </Menu>
     </SidebarWrapper>
@@ -19,7 +20,7 @@ const SidebarWrapper = styled.div`
     flex:1;
     .logo{
         font-weight:bold;
-        font-size:1.5remhttps://iconmonstr.com/gear-2-svg/;
+        font-size:1.5rem;
     }
 `
 const Menu = styled.ul`
