@@ -30,14 +30,43 @@ type MainLayoutProps = {
     children:React.ReactNode;
 }
 function MainLayout({children}:MainLayoutProps){
-    return <Main>{children}</Main>
+    return <Main>
+                <ContentWrapper>
+                {children}    
+                </ContentWrapper>
+           </Main>
 }
 AppLayout.MainLayout = MainLayout;
 
 const Main = styled.main`
+    
     margin-left:16.25rem;
     padding-left:2rem;
     padding-top:3rem;
     padding-left:3rem;
     padding-bottom:3rem;
+    height:100%;
 ` 
+const ContentWrapper = styled.div`
+    padding-left:2rem;
+    padding-right:2rem;
+    
+`
+
+type FooterLayoutProps = {
+    children:React.ReactNode;
+}
+
+function FooterLayout({ children }:FooterLayoutProps){
+    return <Footer>{children}</Footer>
+}
+
+AppLayout.FooterLayout = FooterLayout;
+const Footer = styled.footer`
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:1rem;
+    background:black;
+`

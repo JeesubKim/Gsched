@@ -28,6 +28,7 @@ const StyledLink = styled(NavLink)`
     margin-bottom:.5rem;
     text-decoration:none;
     color:black;
+    transition: .3s;
     &.active {
         background:lightgrey;
         font-weight:bold;
@@ -36,6 +37,7 @@ const StyledLink = styled(NavLink)`
 
     &:hover{
         background: lightgrey;
+        transition: .3s;
     }
     svg{
         color:black;

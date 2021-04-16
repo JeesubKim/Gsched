@@ -6,11 +6,12 @@ export type SidebarProps = {
 }
 function Sidebar({}:SidebarProps){
     return <SidebarWrapper>
-        <div className="logo">G-logger</div>
+        <div className="logo">G-Sched</div>
         <Menu>
             <SidebarItem icon='dashboard' text='Dashboard' to='/'/>
-            <SidebarItem icon='logs' text='Logs' to='/Logs'/>
-            <SidebarItem icon='flask' text='Lab' to='/Lab'/>
+            <SidebarItem icon='schedule' text='Schedule' to='/Schedule'/>
+            <SidebarItem icon='requirement' text='Requirement' to='/Requirement'/>
+            <SidebarItem icon='test' text='Test' to='/Test'/>
             <SidebarItem icon='settings' text='Settings' to='/Settings'/>
             
         </Menu>
